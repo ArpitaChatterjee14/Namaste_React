@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Namaste React</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <!-- <script>
+      const heading = document.createElement("h1"); //creating h1 tag here
+      heading.innerHTML = "Hello World from JS"; // we are adding value to h1 tag
+      const root = document.getElementById("root"); // geting element with id so we can put all the above value to root
+      root.appendChild(heading); // appending child to root
+    </script> -->
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    ></script>
+
+    <!-- <script>
+      const parent = React.createElement(
+        "div",
+        { id: "parent" },
+        React.createElement(
+          "div",
+          { id: "child" },
+          React.createElement("h1", {}, "I'm an h1 tag")
+        )
+      );
+
+      const root = ReactDOM.createRoot(document.getElementById("root")); //
+      root.render(parent); // render method is just changing the JS object (heading) into h1 tag and put it up into DOM
+    </script> -->
+
+    <script>
+      const parent = React.createElement("div", { id: "parent" }, [
+        React.createElement(
+          "div",
+          { id: "child1" },
+          React.createElement("h1", {}, "I'm an h1 tag")
+        ),
+        React.createElement("div", { id: "child2" }, [
+          React.createElement("p", {}, "I'm a p tag"),
+          React.createElement("span", {}, "I'm a span tag"),
+        ]),
+      ]);
+
+      const root = ReactDOM.createRoot(document.getElementById("root")); //
+      root.render(parent); // render method is just changing the JS object (heading) into h1 tag and put it up into DOM
+    </script>
+
+    <!-- <script>
+      const heading = React.createElement("h1", {}, "Hello World from React"); // h1 is the tag, doesn't have an id so object is null (any attribute), and the value
+      //heading is basically just a JS object
+      const root = ReactDOM.createRoot(document.getElementById("root")); //
+      root.render(heading); // render method is just changing the JS object (heading) into h1 tag and put it up into DOM
+    </script> -->
+  </body>
+</html>
