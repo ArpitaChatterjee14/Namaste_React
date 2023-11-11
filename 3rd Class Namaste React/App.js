@@ -30,7 +30,8 @@ const HeadingComponent = () => {
 //Component Composition - Component inside Component
 const HeadingComponent1 = () => (
   <div id="container">
-    <HeadingComponent />
+    {/* <HeadingComponent /> */}
+    {HeadingComponent()}
     <h2>{jsxHeading}</h2>
     <h1 className="heading">Namaste React Functional Component 2</h1>
   </div>
@@ -42,3 +43,5 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 // root.render(jsxHeading);
 
 root.render(<HeadingComponent1 />);
+
+// JSX takes care of injection attacks like Cross site scripting
